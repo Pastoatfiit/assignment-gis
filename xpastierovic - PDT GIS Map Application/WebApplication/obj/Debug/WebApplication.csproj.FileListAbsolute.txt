@@ -1,0 +1,39 @@
+C:\Users\Kristián\Downloads\assignment-gis-iron261-master\assignment-gis-iron261-master\WebApplication\bin\WebApplication.dll.config
+C:\Users\Kristián\Downloads\assignment-gis-iron261-master\assignment-gis-iron261-master\WebApplication\bin\WebApplication.dll
+C:\Users\Kristián\Downloads\assignment-gis-iron261-master\assignment-gis-iron261-master\WebApplication\bin\WebApplication.pdb
+C:\Users\Kristián\Downloads\assignment-gis-iron261-master\assignment-gis-iron261-master\WebApplication\bin\Newtonsoft.Json.dll
+C:\Users\Kristián\Downloads\assignment-gis-iron261-master\assignment-gis-iron261-master\WebApplication\bin\Npgsql.dll
+C:\Users\Kristián\Downloads\assignment-gis-iron261-master\assignment-gis-iron261-master\WebApplication\bin\Newtonsoft.Json.xml
+C:\Users\Kristián\Downloads\assignment-gis-iron261-master\assignment-gis-iron261-master\WebApplication\bin\Npgsql.xml
+C:\Users\Kristián\Downloads\assignment-gis-iron261-master\assignment-gis-iron261-master\WebApplication\obj\Debug\WebApplication.csprojResolveAssemblyReference.cache
+C:\Users\Kristián\Downloads\assignment-gis-iron261-master\assignment-gis-iron261-master\WebApplication\obj\Debug\WebApplication.csproj.CoreCompileInputs.cache
+C:\Users\Kristián\Downloads\assignment-gis-iron261-master\assignment-gis-iron261-master\WebApplication\obj\Debug\WebApplication.dll
+C:\Users\Kristián\Downloads\assignment-gis-iron261-master\assignment-gis-iron261-master\WebApplication\obj\Debug\WebApplication.pdb
+C:\Users\Kristián\Downloads\assignment-gis-iron261-master\assignment-gis-iron261-master\WebApplication\bin\System.Threading.Tasks.Extensions.dll
+C:\Users\Kristián\Downloads\assignment-gis-iron261-master\assignment-gis-iron261-master\WebApplication\bin\System.Threading.Tasks.Extensions.xml
+C:\Users\Kristián\Desktop\PDT projekt\WebApplication\bin\WebApplication.dll.config
+C:\Users\Kristián\Desktop\PDT projekt\WebApplication\bin\WebApplication.dll
+C:\Users\Kristián\Desktop\PDT projekt\WebApplication\bin\WebApplication.pdb
+C:\Users\Kristián\Desktop\PDT projekt\WebApplication\bin\Newtonsoft.Json.dll
+C:\Users\Kristián\Desktop\PDT projekt\WebApplication\bin\Npgsql.dll
+C:\Users\Kristián\Desktop\PDT projekt\WebApplication\bin\System.Threading.Tasks.Extensions.dll
+C:\Users\Kristián\Desktop\PDT projekt\WebApplication\bin\Newtonsoft.Json.xml
+C:\Users\Kristián\Desktop\PDT projekt\WebApplication\bin\Npgsql.xml
+C:\Users\Kristián\Desktop\PDT projekt\WebApplication\bin\System.Threading.Tasks.Extensions.xml
+C:\Users\Kristián\Desktop\PDT projekt\WebApplication\obj\Debug\WebApplication.csprojResolveAssemblyReference.cache
+C:\Users\Kristián\Desktop\PDT projekt\WebApplication\obj\Debug\WebApplication.csproj.CoreCompileInputs.cache
+C:\Users\Kristián\Desktop\PDT projekt\WebApplication\obj\Debug\WebApplication.dll
+C:\Users\Kristián\Desktop\PDT projekt\WebApplication\obj\Debug\WebApplication.pdb
+C:\Users\Dominik Pastierovič\Desktop\assignment-gis-xkonikk\WebApplication\bin\WebApplication.dll
+C:\Users\Dominik Pastierovič\Desktop\assignment-gis-xkonikk\WebApplication\bin\WebApplication.pdb
+C:\Users\Dominik Pastierovič\Desktop\assignment-gis-xkonikk\WebApplication\bin\Newtonsoft.Json.dll
+C:\Users\Dominik Pastierovič\Desktop\assignment-gis-xkonikk\WebApplication\bin\Npgsql.dll
+C:\Users\Dominik Pastierovič\Desktop\assignment-gis-xkonikk\WebApplication\bin\System.Threading.Tasks.Extensions.dll
+C:\Users\Dominik Pastierovič\Desktop\assignment-gis-xkonikk\WebApplication\bin\Newtonsoft.Json.xml
+C:\Users\Dominik Pastierovič\Desktop\assignment-gis-xkonikk\WebApplication\bin\Npgsql.xml
+C:\Users\Dominik Pastierovič\Desktop\assignment-gis-xkonikk\WebApplication\bin\System.Threading.Tasks.Extensions.xml
+C:\Users\Dominik Pastierovič\Desktop\assignment-gis-xkonikk\WebApplication\obj\Debug\WebApplication.csproj.CoreCompileInputs.cache
+C:\Users\Dominik Pastierovič\Desktop\assignment-gis-xkonikk\WebApplication\obj\Debug\WebApplication.dll
+C:\Users\Dominik Pastierovič\Desktop\assignment-gis-xkonikk\WebApplication\obj\Debug\WebApplication.pdb
+C:\Users\Dominik Pastierovič\Desktop\assignment-gis-xkonikk\WebApplication\obj\Debug\WebApplication.csprojAssemblyReference.cache
+C:\Users\Dominik Pastierovič\Desktop\assignment-gis-xkonikk\WebApplication\obj\Debug\WebApplication.csproj.CopyComplete

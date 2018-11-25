@@ -1,0 +1,95 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+    background: #FF7F50;
+}
+
+#map {
+    position: relative;
+	float: right;
+    width: 80%;
+	height: 100%;
+}
+
+#menu {
+    position: relative;
+    float: left;
+    width: 20%;
+    background-color: white;
+    height: 100%;
+}
+
+.checkBoxesMenu-ui 
+{  
+  padding:2px;
+  border-radius:3px;
+  margin-bottom: 1px;
+  font-size: 60%;
+  }
+#boxDistance {
+  width: 90%;
+  text-align: center;
+}
+
+#boxDstPOI {
+    width: 90%;
+    text-align: center;
+}
+
+#boxDstNature {
+    width: 90%;
+    text-align: center;
+}
+
+#boxCount {
+    width: 90%;
+    text-align: center;
+}
+
+#h4 {
+    text-align: center;
+}
+
+#boxDstNature {
+    width: 90%;
+    text-align: center;
+}
+
+#countBox {
+    border: 1px solid;
+    border-radius: 15px;
+    width: 90%;
+}
+
+#checkBoxesMenu 
+{
+  background: inherit;
+  padding-left: 10%
+}
+button {
+  padding: 1%; 
+  width: 90%;  
+}
+
+p{
+  padding-left: 10%
+}
+
+.img {
+	height: 100px;
+	width: 180px;
+	z-index:50;
+	position:fixed;
+	right:10px;
+	top:10px;
+}
+
+.scrollClass {
+    height: 1000px;
+    overflow-y: scroll;
+    direction: rtl;
+}
+
+.reverse {
+    direction: ltr;
+}
