@@ -1,22 +1,18 @@
-*This is a documentation for a fictional project, just to show you what I expect. Notice a few key properties:*
-- *no cover page, really*
-- *no copy&pasted assignment text*
-- *no code samples*
-- *concise, to the point, gets me a quick overview of what was done and how*
-- *I don't really care about the document length*
-- *I used links where appropriate*
-
 # Overview
 
-This application shows hotels in Bratislava on a map. Most important features are:
-- search by proximity to my current location
-- search by hotel name
-- intelligent ordering - by proximity and by hotel features
-- hotels on the map are color coded by their quality assigned in stars (standard)
+This application shows roads usable for road bicycles (that means roads of either first, second or third class, cycleways) and footwalks where you can pass with a bicycle. It also allows you to search for points of interest (POI) and natural landscape in close proximity around roads. So you can use this application to:
 
-This is it in action:
+- Show roads of selected types (roads [first, second and third class, excluding highways and tunnels], cycleways and footwalks) in set distance around line connecting two markers on the map
+- Show POI of selected types (buildings [castles, cathedrals, churches, bunkers, city gates], food [pubs, bars, restaurations], accomodation [hotels, hostels, motels] and bicycle services [bicycle parking, bicycle rental, bicycle service] in set distance near filtered roads
+- Show natural landscape of selected types (forest, park, water [streams, rivers, lakes, riverbanks]) in set distance near filtered roads
+- Show N nearest objects (or N of each type) of selected types to bicycle marker on the map
+Other features:
+- Show both POI and Nature at the same time
+- Clear map of existing items
 
-![Screenshot](screenshot.png)
+Roads around selected route:
+
+![Screenshot](screenshot-roads.png)
 
 The application has 2 separate parts, the client which is a [frontend web application](#frontend) using mapbox API and mapbox.js and the [backend application](#backend) written in [Rails](http://rubyonrails.org/), backed by PostGIS. The frontend application communicates with backend using a [REST API](#api).
 
