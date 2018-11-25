@@ -24,7 +24,7 @@ The application has 2 separate parts, the client which is a [frontend web applic
 
 The frontend application is a static ASP page (`Map.aspx`), which shows a mapbox.js widget. It is displaying roads, buildings and natural landscape. Colors used for this objects are selected to be intuitive (dark green for forests, dark blue for water covered areas), and since most of this colors are dark, map style is mapbox.light for better contrast. This map already contains all roads and streets drawn with white color, so application is not drawing whole road net, only selected types to highlight them.
 
-All map functions are handled by mapbox api by handling geojson representing what application needs to show. This geojson is provided by backend. Only frontent functionality is moving markers around the map and gathering input trough the form on the left side. Form is separated to logic subparts by highliting groups of elemenents required for each type of query.
+All map functions are handled by mapbox api by handling geojson representing what application needs to show. This geojson is provided by backend. Only frontent functionality is moving markers around the map and gathering input trough the form on the left side. Form is separated to logic subparts by highliting groups of elemenents required for each type of query. For form styles is used [Bootstrap](https://getbootstrap.com/).
 
 # Backend
 
