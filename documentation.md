@@ -55,7 +55,7 @@ A lot of querying is done based on type, and application uses small portion of t
 
 ## Api
 
-**This POST queries data needed for roads
+**This POST queries data needed for roads**
 
 `type: POST,
 async: true,
@@ -66,20 +66,6 @@ data: '{lat 48, lon 18, radius 2000, cycleway true, footway true, other false}'
 contentType: 'application/json; charset=utf-8',
 dataType: 'json'`
 
-**Find hotels by name, sorted by proximity and quality**
-
-`GET /search?name=hviezda&lat=25346&long=46346123`
-
 ### Response
 
-API calls return json responses with 2 top-level keys, `hotels` and `geojson`. `hotels` contains an array of hotel data for the sidebar, one entry per matched hotel. Hotel attributes are (mostly self-evident):
-```
-{
-  "name": "Modra hviezda",
-  "style": "modern", # cuisine style
-  "stars": 3,
-  "address": "Panska 31"
-  "image_url": "/assets/hotels/652.png"
-}
-```
-`geojson` contains a geojson with locations of all matched hotels and style definitions.
+API returns formated geojson, which is then added to map layer and mapbox api shows objects represented by this geojson.
