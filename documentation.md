@@ -8,6 +8,7 @@ This application shows roads usable for road bicycles (that means roads of eithe
 - Show N nearest objects (or N of each type) of selected types to bicycle marker on the map
 Other features:
 - Show both POI and Nature at the same time
+- Show heatmap of cycleways
 - Clear map of existing items
 
 Roads around selected route:
@@ -17,6 +18,10 @@ Roads around selected route:
 Nearest N objects of selected types:
 
 ![Screenshot](screenshot-nearestPOI.png)
+
+Heatmap
+
+![Screenshot](screenshot-heatmap.png)
 
 The application has 2 separate parts, the client which is a [frontend web application](#frontend) using mapbox API and mapbox.js and the [backend application](#backend) written in [ASP.NET](https://www.asp.net/), with data provided by PostGIS extension of Postgres. The frontend application communicates with backend using a [REST API](#api).
 
@@ -52,6 +57,8 @@ Tables used by applications:
   - waterways
   
 A lot of querying is done based on type, and application uses small portion of types. For this reason, I tried view and later materialized view from types which are used by application. Neither option increased performance, because indexing already did it's job. Some queries are using geometry transformed by some PostGis function, but again, index coul not be created because geometries are too large to be indexed.
+
+Data for heatmap are stored in two materialized views. Materialized view stores result of a query and is updated only on update call. After the modification of road data this view needs to be recalculated. One view stores multiline geometry, where all cycleways are connected to one. Second view stores polygons representing areas in 5 different distance ranges from the road. Each range is collored by different color on the map.
 
 ## Api
 
