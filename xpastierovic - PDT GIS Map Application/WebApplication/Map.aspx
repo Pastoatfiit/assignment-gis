@@ -78,6 +78,7 @@
             <tr><td>
                 <h4>Other features</h4>
                 <p><button type="button" class="btn btn-primary" onclick="ShowAll()">Show POI and Nature</button></p>
+                <p><button type="button" class="btn btn-danger" onclick="ShowHeatmap()">Show Heat map</button></p>
                 <p><button type="button" class="btn btn-danger" onclick="ClearMap()">Clear map</button></p>
             </td></tr>
 
@@ -401,6 +402,47 @@
 				    });
 				}
 
+				function ShowHeatmap() {
+				    ShowLoadingWheel();
+				    $.ajax({
+				        type: "POST",
+				        async: true,
+				        processData: true,
+				        cache: false,
+				        url: 'Map.aspx/ShowHeatmap',
+				        data: '{}',
+				        contentType: 'application/json; charset=utf-8',
+				        dataType: "json",
+				        success: function (data) {
+				            try {
+				                HideLoadingWheel();
+				                var geojson = jQuery.parseJSON(data.d);
+				                map.featureLayer.setGeoJSON(emptyGeoJson);
+				                if (objectsLayer != null && deleteLayer) {
+				                    map.removeLayer(objectsLayer);
+				                }
+				                objectsLayer = L.geoJSON(geojson, {
+				                    onEachFeature: onEachFeature,
+				                    style: function (feature) {
+				                        if (feature.properties.popupContent.startsWith("veryFar")) return { color: '#00FF00', stroke: false }
+				                        if (feature.properties.popupContent.startsWith("far")) return { color: '#80FF00', stroke: false };
+				                        if (feature.properties.popupContent.startsWith("medium")) return { color: '#FFFF00', stroke: false };
+				                        if (feature.properties.popupContent.startsWith("close")) return { color: '#FF8000', stroke: false };
+				                        if (feature.properties.popupContent.startsWith("veryClose")) return { color: '#FF0000', stroke: false };
+				                    },
+				                }).addTo(map);
+				            }
+				            catch (e) {
+				                console.log(e.message);
+				                console.log(data.d);
+				            }
+				        },
+				        error: function (e) {
+				            HideLoadingWheel();
+				            console.log(e.message);
+				        }
+				    });
+				}
 				
                 // display loading wheel
 				function ShowLoadingWheel() {

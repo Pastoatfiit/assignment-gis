@@ -14,7 +14,7 @@ public partial class Map : Page
         var geoJson = "";
 
         geoJson += @"{""type"": ""Feature"", ""properties"": {""name"":""" + name + @""", ""popupContent"":""" + type + @"""},";
-        geoJson += @"""geometry"": " + geometry + "}";
+        geoJson += @"""geometry"": " + geometry + @"}";
 
         return geoJson;
     }
@@ -324,6 +324,32 @@ public partial class Map : Page
             while (reader.Read())
             {
                 geometries.Add(AddGeometry(reader["type"].ToString(), reader["type"].ToString() + " <br /> " + reader["name"].ToString(), reader["geom"].ToString()));
+            }
+            reader.Close();
+        }
+        return "[" + string.Join(", ", geometries) + "]";
+    }
+
+    [System.Web.Services.WebMethod]
+    public static string ShowHeatmap()
+    {
+        var geometries = new List<string>();
+        using (var connection = new NpgsqlConnection(connectionString))
+        {
+            connection.Open();
+            var query = "";
+            query = "select  'veryFar' as distance, veryFar as geom from heatmapAreas union select 'far' as distance, far from heatmapAreas union select 'medium' as distance, medium from heatmapAreas union select 'close' as distance, close from heatmapAreas union select 'veryClose' as distance, veryClose from heatmapAreas";
+        
+            var command = new NpgsqlCommand(query, connection);
+
+
+
+            var reader = command.ExecuteReader();
+
+
+            while (reader.Read())
+            {
+                geometries.Add(AddGeometry(reader["distance"].ToString(), reader["distance"].ToString(), reader["geom"].ToString()));
             }
             reader.Close();
         }

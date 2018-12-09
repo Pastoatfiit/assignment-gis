@@ -1,0 +1,13 @@
+C:\Users\Dominik Pastierovič\Desktop\xpastierovic - PDT GIS Map Application\WebApplication\bin\WebApplication.dll
+C:\Users\Dominik Pastierovič\Desktop\xpastierovic - PDT GIS Map Application\WebApplication\bin\WebApplication.pdb
+C:\Users\Dominik Pastierovič\Desktop\xpastierovic - PDT GIS Map Application\WebApplication\bin\Newtonsoft.Json.dll
+C:\Users\Dominik Pastierovič\Desktop\xpastierovic - PDT GIS Map Application\WebApplication\bin\Npgsql.dll
+C:\Users\Dominik Pastierovič\Desktop\xpastierovic - PDT GIS Map Application\WebApplication\bin\System.Threading.Tasks.Extensions.dll
+C:\Users\Dominik Pastierovič\Desktop\xpastierovic - PDT GIS Map Application\WebApplication\bin\Newtonsoft.Json.xml
+C:\Users\Dominik Pastierovič\Desktop\xpastierovic - PDT GIS Map Application\WebApplication\bin\Npgsql.xml
+C:\Users\Dominik Pastierovič\Desktop\xpastierovic - PDT GIS Map Application\WebApplication\bin\System.Threading.Tasks.Extensions.xml
+C:\Users\Dominik Pastierovič\Desktop\xpastierovic - PDT GIS Map Application\WebApplication\obj\Debug\PDT GIS Web Application.csprojAssemblyReference.cache
+C:\Users\Dominik Pastierovič\Desktop\xpastierovic - PDT GIS Map Application\WebApplication\obj\Debug\PDT GIS Web Application.csproj.CoreCompileInputs.cache
+C:\Users\Dominik Pastierovič\Desktop\xpastierovic - PDT GIS Map Application\WebApplication\obj\Debug\PDT GIS Web Application.csproj.CopyComplete
+C:\Users\Dominik Pastierovič\Desktop\xpastierovic - PDT GIS Map Application\WebApplication\obj\Debug\WebApplication.dll
+C:\Users\Dominik Pastierovič\Desktop\xpastierovic - PDT GIS Map Application\WebApplication\obj\Debug\WebApplication.pdb
