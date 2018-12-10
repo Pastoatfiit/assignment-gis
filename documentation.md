@@ -64,7 +64,7 @@ Data for heatmap are stored in two materialized views. Materialized view stores 
 
 **This POST queries data needed for roads**
 
-`type: POST,
+`type: POST,<br/>
 async: true,
 processedData: true,
 cache: false,
