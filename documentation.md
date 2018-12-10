@@ -12,6 +12,7 @@ Other features:
 - Clear map of existing items
 
 Roads around selected route:
+
 SELECT ST_AsGeoJSON(geom) as geom, type from roads where
 
 (type = 'primary' OR
@@ -30,23 +31,41 @@ ST_DWithin(geom, ST_MakeLine('lonStart', 'latStart', lonEnd', latEnd'), 2000, tr
 ![Screenshot](screenshot-roads.png)
 
 Show nearest object around filtered roads:
-<!-- roads then nearby objects -->
+
+// roads then nearby objects
+
 SELECT DISTINCT ST_AsGeoJson(ST_Centroid(b.geom)) as bgeom, b.type from
+
 (SELECT ST_AsGeoJSON(geom) as geom, type from roads where
+
 type = 'cycleway' AND
+
 ST_DWithin(geom, ST_MakeLine('lonStart', 'latStart', lonEnd', latEnd'), 2000, true)) as r
+
 JOIN
+
 ((SELECT type, geom, name from nature where
+
 (type = 'forest' OR
+
 type = 'park')
-union
-(SELECT type, geom, name from waterways where
-type = 'river' OR
-type = 'riverbank' OR
-type = 'stream')) as b
-on ST_DWithin(b.geom, r.geom, 250, true)
-<!-- select roads again to show them on the map -->
+
 UNION
+
+(SELECT type, geom, name from waterways where
+
+type = 'river' OR
+
+type = 'riverbank' OR
+
+type = 'stream')) as b
+
+on ST_DWithin(b.geom, r.geom, 250, true)
+
+// select roads again to show them on the map
+
+UNION
+
 select * from r
 
 Nearest N objects of selected types:
