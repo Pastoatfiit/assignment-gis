@@ -27,104 +27,79 @@ ST_DWithin(geom, ST_MakeLine('lonStart', 'latStart', lonEnd', latEnd'), 2000, tr
 
 Show nearest object around filtered roads:
 
-// roads then nearby objects
-
+```SQL
+<!--roads then nearby objects-->
 SELECT DISTINCT ST_AsGeoJson(ST_Centroid(b.geom)) AS bgeom, b.type from
-
 (SELECT ST_AsGeoJSON(geom) AS geom, type FROM roads WHERE
-
 type = 'cycleway' AND
-
 ST_DWithin(geom, ST_MakeLine('lonStart', 'latStart', lonEnd', latEnd'), 2000, true)) AS r
-
 JOIN
-
 ((SELECT type, geom, name FROM nature WHERE
-
 (type = 'forest' OR
-
 type = 'park')
-
 UNION
-
 (SELECT type, geom, name from waterways WHERE
-
 type = 'river' OR
-
 type = 'riverbank' OR
-
 type = 'stream')) as b
-
 ON ST_DWithin(b.geom, r.geom, 250, true)
-
-// select roads again to show them on the map
-
+<!--select roads again to show them on the map-->
 UNION
-
 SELECT * FROM r
+```
 
 Nearest N objects of selected types:
-
+```SQL
 SELECT * FROM
-
 ((SELECT ST_AsGeoJSON(ST_Centroid(geom) as geom type, name FROM buildings WHERE
-
 type = 'castle' ORDER BY geom <-> ST_MakePoint('lat', 'lon') LIMIT 50)
-
 UNION
-
 (SELECT ST_AsGeoJSON(ST_Centroid(geom) as geom type, name FROM buildings WHERE
-
 type = 'bunker' ORDER BY geom <-> ST_MakePoint('lat', 'lon') LIMIT 50)
-
 UNION
-
 (SELECT ST_AsGeoJSON(ST_Centroid(geom) as geom type, name FROM buildings WHERE
-
 type = 'city gate' ORDER BY geom <-> ST_MakePoint('lat', 'lon') LIMIT 50))
-
 AS foo ORDER BY ST_GeomFromGeoJSON(geom) <-> ST_MakePoint('lat', 'lon') LIMIT 50
-
+```
 
 ![Screenshot](screenshot-nearestPOI.png)
 
 Heatmap
 
+```SQL
 CREATE MATERIALIZED VIEW heatmap AS
-
 SELECT roads.type, ST_Multi(ST_Union(roads.geom)) AS geom FROM roads GROUP BY roads.type
-
-
+```
+```SQL
+CREATE MATERIALIZED VIEW heatmapAreas AS
 SELECT type,
-
 ST_AsGeoJSON(ST_Difference(range5, range4)) AS veryFar,
-
 ST_AsGeoJSON(ST_Difference(range4, range3)) AS far,
-
 ST_AsGeoJSON(ST_Difference(range3, range2)) AS medium,
-
 ST_AsGeoJSON(ST_Difference(range2, range1)) AS close,
-
 ST_AsGeoJSON(ST_Difference(range1, range0)) AS veryClose
-
 FROM
-
 (SELECT type, geom,
-
 ST_Buffer(geom, 2500) AS range5,
-
 ST_Buffer(geom, 2000) AS range4,
-
 ST_Buffer(geom, 1500) AS range3,
-
 ST_Buffer(geom, 1000) AS range2,
-
 ST_Buffer(geom, 500) AS range1,
-
 ST_Buffer(geom, 0) AS range0
-
 FROM heatmap WHERE type = 'cycleway') AS foo
+```
 
+```SQL
+SELECT 'veryFar' AS distance, veryFar AS geom FROM heatmapAreas
+UNION
+SELECT 'far' AS distance, far AS geom FROM heatmapAreas
+UNION
+SELECT 'medium' AS distance, medium AS geom FROM heatmapAreas
+UNION
+SELECT 'close' AS distance, close AS geom FROM heatmapAreas
+UNION
+SELECT 'veryClose' AS distance, veryClose AS geom FROM heatmapAreas
+```
 
 
 ![Screenshot](screenshot-heatmap.png)
