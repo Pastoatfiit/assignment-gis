@@ -12,7 +12,7 @@ Other features:
 - Clear map of existing items
 
 Roads around selected route:
-
+```SQL
 SELECT ST_AsGeoJSON(geom) AS geom, type FROM roads WHERE
 
 (type = 'primary' OR
@@ -25,7 +25,7 @@ type = 'road' OR)
 
 type = 'cycleway' AND
 
-ST_DWithin(geom, ST_MakeLine('lonStart', 'latStart', lonEnd', latEnd'), 2000, true)
+ST_DWithin(geom, ST_MakeLine('lonStart', 'latStart', lonEnd', latEnd'), 2000, true)```
 
 
 ![Screenshot](screenshot-roads.png)
