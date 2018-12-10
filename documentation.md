@@ -13,11 +13,17 @@ Other features:
 
 Roads around selected route:
 SELECT ST_AsGeoJSON(geom) as geom, type from roads where
+
 (type = 'primary' OR
+
 type = 'secondary' OR
+
 type = 'tertiary' OR
+
 type = 'road' OR)
+
 type = 'cycleway' AND
+
 ST_DWithin(geom, ST_MakeLine('lonStart', 'latStart', lonEnd', latEnd'), 2000, true)
 
 
